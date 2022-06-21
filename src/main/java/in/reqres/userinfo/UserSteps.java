@@ -59,6 +59,14 @@ public class UserSteps {
                 .delete(EndPoints.DELETE_USER_BY_ID)
                 .then();
     }
+    @Step("get single  : by id {3}")
+    public ValidatableResponse getSingleUser(String id){
+        return SerenityRest.given().log().all()
+                .pathParam("userID",id)
+                .when()
+                .get(EndPoints.GET_SINGLE_USER_BY_ID)
+                .then();
+    }
 
 
 }
